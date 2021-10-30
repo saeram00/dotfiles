@@ -1,0 +1,105 @@
+" File type options
+set nocompatible
+set fileformat=unix
+set encoding=utf-8
+
+" Vim-plug setup
+
+call plug#begin('~/.vim/bundle')
+
+"" Plugins
+" (Colorschemes)
+Plug 'artanikin/vim-synthwave84'
+Plug 'lithammer/vim-eighties'
+Plug 'doums/darcula'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
+Plug 'sainnhe/edge'
+Plug 'stillwwater/vim-nebula'
+Plug 'rafalbromirski/vim-aurora'
+
+" (General)
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdtree'
+
+" (Python)
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+Plug 'tmhedberg/SimpylFold'
+
+"" Plugins end
+call plug#end()
+
+" Display options
+if has("termguicolors")
+    set termguicolors
+endif
+set background=dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_enable_bold = 1
+let g:sonokai_transparent_background=1
+colorscheme gruvbox-material
+syntax on
+set sc
+set nowrap
+set number
+set relativenumber
+let python_highlight_all=1
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Search options
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+
+" Indent options
+set tabstop=4 shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+set smarttab
+set expandtab
+
+" Control options
+set foldmethod=indent
+set foldlevel=99
+let mapleader=" "
+" Use "H" to control code folding
+nnoremap H za
+" Make "Y" behave the same as "D" and "C"
+nnoremap Y y$
+
+" Make YCM go to definitions
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Make Vim autotype matching characters
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap < <><Left>
+"inoremap " <Left>
+"inoremap ' ''<Left>
+
+" Keep cursor centered when searching through file
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+

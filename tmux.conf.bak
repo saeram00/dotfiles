@@ -1,0 +1,24 @@
+# Display colors
+set -g default-terminal "xterm-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# Config reload
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# Set window base index to 1
+set -g base-index 1
+
+# Control options
+# (Use vim-like bindings to switch panes)
+bind -n M-j select-pane -D
+bind -n M-k select-pane -U
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+
+# (Shift+arrows to switch windows)
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
+# (Easier window split keys)
+bind-key v split-window -h
+bind-key h split-window -v

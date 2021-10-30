@@ -1,0 +1,18 @@
+# File management
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias sln='ln -siv'
+alias chmod='chmod -v'
+
+# Resources check
+alias df='df -h' 
+alias free='free -h'
+
+# Network
+alias wget='wget --show-progress'
+
+# Programs
+alias vim='vim.nox'
+alias py8='python3.8'
+alias py9='python3.9'
