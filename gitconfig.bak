@@ -1,0 +1,5 @@
+[user]
+    name = saeram00
+	email = saeram00.nova@gmail.com
+[init]
+	templateDir = /home/saeram00/.git-template/
