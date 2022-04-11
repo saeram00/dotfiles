@@ -1,0 +1,31 @@
+# File manipulation
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias chmod='chmod -v'
+alias sln='ln -siv'
+
+# Go to Windows User Home Directory (WSL specific)
+# alias cdw='cd /mnt/c/Users/matia'
+
+# Clear screen and history for privacy and security
+alias hsc='history -c'
+alias clh='clear && history -c'
+alias cls='clear && ls'
+alias cll='clear && ls -ahlF'
+alias cla='clear && ls -A'
+
+# Resource management
+alias df='df -h'
+alias free='free -h'
+
+# Network
+alias wget='wget --show-progress'
+
+# Programs
+alias vim='vim.nox'
+# alias nv='nvim'
+
+# Authentication
+alias git-ssh='ssh -T saeram-github'
+alias ssh-start-agent='eval $(ssh-agent -s)'

@@ -1,0 +1,16 @@
+# PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[36m\]\h\[\e[0m\]: \[\e[32m\]$(parse_git_branch)\[\e[0m\]\n\[\e[1;34m\]\W\[\e[0m\]\$ '
+# FMT_RESET="\[\e[0m\]"
+
+parse_git_branch() {
+    GIT_BRANCH="$(git branch --show-current 2> /dev/null)"
+    [ -d .git ] && printf "[%s]" "$GIT_BRANCH"
+}
+
+# git_status_color() {
+#     GIT_STATUS="$(git status -s 2> /dev/null)"
+#     $GIT_STATUS && printf "%s" "\[\e\[32m\]" || printf "%s" "\[\e[1;31m\]"
+# }
+
+PS1='\[\e[01;32m\]\u\[\e[0m\]@\[\e[36m\]\h\[\e[0m\]: '
+PS1+='\[\e[32m\]$(parse_git_branch)\[\e[0m\]\n'
+PS1+='[\[\e[1;34m\]\W\[\e[0m\]]-\$ '

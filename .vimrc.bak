@@ -1,0 +1,145 @@
+" Filetype options
+set fileformat=unix
+set encoding=utf-8
+set nocompatible
+
+" vim-plug setup
+call plug#begin('~/.vim/plugged')
+
+" (Colorschemes)
+Plug 'artanikin/vim-synthwave84'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
+Plug 'sainnhe/edge'
+Plug 'doums/darcula'
+
+" (General)
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-syntastic/syntastic'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+" (Python)
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+
+" (Rust)
+" Plug 'rust-lang/rust.vim'
+
+" vim-plug end
+call plug#end()
+
+" Display options
+set background=dark
+if has('+termguicolors')
+  set termguicolors " 24-bit terminal
+endif
+let g:gruvbox_material_background='hard'
+let g:gruvbox_material_enable_bold=1
+let g:gruvbox_material_enable_italic=1
+let g:sonokai_style='andromeda'
+let g:sonokai_enable_bold=1
+let g:sonokai_enable_italic=1
+colorscheme gruvbox-material
+syntax on
+set sc
+set nu
+set relativenumber
+set textwidth=79
+set nowrap
+let python_highlight_all=1
+let g:SimpylFold_docstring_preview=1
+let g:ycm_autoclose_preview_window_after_completion=1
+" let g:rustfmt_autosave=1
+
+" Mute bell (WSL specific)
+" set visualbell
+" set t_vb=
+
+" Search options
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+
+" Indent options
+function! UseSpaces()
+  set tabstop=4
+  set shiftwidth=4
+  set softtabstop=4
+  set expandtab
+  set smarttab
+endfunction
+
+function! UseTabs()
+  set tabstop=4
+  set shiftwidth=0
+  set softtabstop=4
+  set noexpandtab
+endfunction
+
+" Indent options (default)
+set tabstop=4 shiftwidth=4
+set softtabstop=4
+set expandtab
+set smarttab
+set smartindent
+set autoindent
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Control options
+let mapleader=" "
+
+" Save file with leader + w
+map <leader>w  :w<CR>
+
+" Let YCM go to definitions
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Start Python interpreter from vim
+map <leader>py  :!python<CR>
+" Run current buffer as a Python script
+map <leader>pp  :!python %<CR>
+
+" Fold control
+nnoremap H za
+" (Make "Y" behave the same as "D" and "C")
+nnoremap Y y$
+
+" Make Vim autotype matching characters
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap < <><Left>
+"inoremap " <Left>
+"inoremap ' ''<Left>
+
+" (Keep cursor centered when searching through files)
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Move next line to the end of current line
+nnoremap J mzJ`z
+
+" (Undo break points)
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+
+" (Moving text)
+vnoremap J :m '>+1<CR>gv-gv
+vnoremap K :m '<-2<CR>gv-gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+" Templates
+" au BufNewFile *.py 0r ~/.vim/skel/skel.py
+" au BufNewFile *.html 0r ~/.vim/skel/skel.html

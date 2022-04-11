@@ -6,5 +6,6 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-# Clear command history for privacy and security
+pkill ssh-agent -u 1000
+
 history -c
