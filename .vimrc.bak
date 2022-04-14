@@ -26,7 +26,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 
 " (Rust)
-" Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 
 " vim-plug end
 call plug#end()
@@ -36,6 +36,8 @@ set background=dark
 if has('+termguicolors')
   set termguicolors " 24-bit terminal
 endif
+
+" Colorscheme configs
 let g:gruvbox_material_background='hard'
 let g:gruvbox_material_enable_bold=1
 let g:gruvbox_material_enable_italic=1
@@ -43,20 +45,23 @@ let g:sonokai_style='andromeda'
 let g:sonokai_enable_bold=1
 let g:sonokai_enable_italic=1
 colorscheme gruvbox-material
+
+" Formatting and general display
 syntax on
 set sc
 set nu
 set relativenumber
+set colorcolumn=80
 set textwidth=79
 set nowrap
 let python_highlight_all=1
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
-" let g:rustfmt_autosave=1
+let g:rustfmt_autosave=1
 
-" Mute bell (WSL specific)
-" set visualbell
-" set t_vb=
+" Mute bell (WSL specific) and show errors graphically
+set visualbell
+set t_vb=
 
 " Search options
 set hlsearch
@@ -96,15 +101,18 @@ set foldlevel=99
 let mapleader=" "
 
 " Save file with leader + w
-map <leader>w  :w<CR>
+map <leader>w :w<CR>
 
 " Let YCM go to definitions
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Start Python interpreter from vim
-map <leader>py  :!python<CR>
+map <leader>py :!python3<CR>
 " Run current buffer as a Python script
-map <leader>pp  :!python %<CR>
+map <leader>pp :!python3 %<CR>
+" Same thing for Neovim
+map <leader>npy :terminal python3<CR>i
+map <leader>npp :terminal python3 %<CR>i
 
 " Fold control
 nnoremap H za
@@ -122,8 +130,6 @@ nnoremap Y y$
 " (Keep cursor centered when searching through files)
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" Move next line to the end of current line
 nnoremap J mzJ`z
 
 " (Undo break points)
@@ -141,5 +147,5 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
 " Templates
-" au BufNewFile *.py 0r ~/.vim/skel/skel.py
-" au BufNewFile *.html 0r ~/.vim/skel/skel.html
+au BufNewFile *.py 0r ~/.vim/skel/skel.py
+au BufNewFile *.html 0r ~/.vim/skel/skel.html

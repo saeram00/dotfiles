@@ -2,8 +2,7 @@
 # FMT_RESET="\[\e[0m\]"
 
 parse_git_branch() {
-    GIT_BRANCH="$(git branch --show-current 2> /dev/null)"
-    [ -d .git ] && printf "[%s]" "$GIT_BRANCH"
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
 # git_status_color() {
