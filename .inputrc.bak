@@ -1,0 +1,85 @@
+#TAB: menu-complete
+Tab: complete
+set editing-mode vi
+
+# vi-mode
+$if mode=vi
+    set keymap vi-command
+    Control-l: clear-screen
+    "#": insert-comment
+    ".": "i !*"
+    "|": "A | "
+    "D": kill-line
+    "C": "Da"
+    "dw": kill-word
+    "dd": kill-whole-line
+    "db": backward-kill-word
+    "cc": "ddi"
+    "cw": "dwi"
+    "cb": "dbi"
+    "daw": "lbdW"
+    "yaw": "lbyW"
+    "caw": "lbcW"
+    "diw": "lbdw"
+    "yiw": "lbyw"
+    "ciw": "lbcw"
+    "da\"": "lF\"df\""
+    "di\"": "lF\"lmtf\"d`t"
+    "ca\"": "da\"i"
+    "ci\"": "di\"i"
+    "da'": "lF'df'"
+    "di'": "lF'lmtf'd`t"
+    "ca'": "da'i"
+    "ci'": "di'i"
+    "da`": "lF\`df\`"
+    "di`": "lF\`lmtf\`d`t"
+    "ca`": "da`i"
+    "ci`": "di`i"
+    "da(": "lF(df)"
+    "di(": "lF(lmtf)d`t"
+    "da)": "lF(df)"
+    "di)": "lF(lmtf)d`t"
+    "ca(": "da(i"
+    "ci(": "di(i"
+    "ca)": "da)i"
+    "ci)": "di)i"
+    "da{": "lF{df}"
+    "di{": "lF{lmtf}d`t"
+    "da}": "lF{df}"
+    "di}": "lF{lmtf}d`t"
+    "ca{": "da{i"
+    "ci{": "di{i"
+    "ca}": "da}i"
+    "ci}": "di}i"
+    "da[": "lF[df]"
+    "di[": "lF[lmtf]d`t"
+    "da]": "lF[df]"
+    "di]": "lF[lmtf]d`t"
+    "ca[": "da[i"
+    "ci[": "di[i"
+    "ca]": "da]i"
+    "ci]": "di]i"
+    "da<": "lF<df>"
+    "di<": "lF<lmtf>d`t"
+    "da>": "lF<df>"
+    "di>": "lF<lmtf>d`t"
+    "ca<": "da<i"
+    "ci<": "di<i"
+    "ca>": "da>i"
+    "ci>": "di>i"
+    "da/": "lF/df/"
+    "di/": "lF/lmtf/d`t"
+    "ca/": "da/i"
+    "ci/": "di/i"
+    "da:": "lF:df:"
+    "di:": "lF:lmtf:d`t"
+    "ca:": "da:i"
+    "ci:": "di:i"
+    "gg": beginning-of-history
+    "G": end-of-history
+    ?: reverse-search-history
+    #/: forward-search-history
+
+    set keymap vi-insert
+    Control-l: clear-screen
+$endif

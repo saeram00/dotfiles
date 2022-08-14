@@ -12,19 +12,20 @@ alias sln='ln -siv'
 alias hsc='history -c'
 alias clh='clear && history -c'
 alias cls='clear && ls'
-alias cll='clear && ls -ahlF'
+alias cll='clear && ls -AhlF'
 alias cla='clear && ls -A'
 
 # Resource management
 alias df='df -h'
 alias free='free -h'
+alias du='du -h'
 
 # Network
 alias wget='wget --show-progress'
 
 # Programs
 alias vim='vim.nox'
-# alias nv='nvim'
+alias nv='nvim'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
