@@ -54,6 +54,8 @@ set relativenumber
 set colorcolumn=80
 set textwidth=79
 set nowrap
+
+" Language and completion specific settings
 let python_highlight_all=1
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -145,6 +147,12 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
+
+" Moving between split-window buffers
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Templates
 au BufNewFile *.py 0r ~/.vim/skel/skel.py
