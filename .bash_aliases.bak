@@ -26,6 +26,7 @@ alias wget='wget --show-progress'
 # Programs
 alias vim='vim.nox'
 alias nv='nvim'
+alias nvdiff='nvim -d'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
