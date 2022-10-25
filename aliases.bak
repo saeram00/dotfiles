@@ -5,6 +5,12 @@ alias rm='rm -Iv'
 alias chmod='chmod -v'
 alias sln='ln -siv'
 
+# File listing (with lsd)
+# alias ls='lsd'
+# alias ll='lsd -AhlF'
+# alias la='lsd -AF'
+# alias li='lsd -dlF'
+
 # Go to Windows User Home Directory (WSL specific)
 # alias cdw='cd /mnt/c/Users/matia'
 
@@ -13,7 +19,7 @@ alias hsc='history -c'
 alias clh='clear && history -c'
 alias cls='clear && ls'
 alias cll='clear && ls -AhlF'
-alias cla='clear && ls -A'
+alias cla='clear && ls -AF'
 
 # Resource management
 alias df='df -h'
