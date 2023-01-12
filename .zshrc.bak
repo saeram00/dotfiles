@@ -24,7 +24,7 @@ antigen apply
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Source aliases file
-[[ -f "$HOME/.aliases" ]] && source "$HOME/.config/shell/aliases"
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # Add user bin folders to PATH
 [[ -d "$HOME/bin/" ]] && PATH="$HOME/bin/:$PATH"

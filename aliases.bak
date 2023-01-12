@@ -2,19 +2,21 @@
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -Iv'
-alias chmod='chmod -v'
+alias chmod='chmod -c'
 alias sln='ln -siv'
 
 # File listing (with lsd)
-# alias ls='lsd'
-# alias ll='lsd -AhlF'
-# alias la='lsd -AF'
-# alias li='lsd -dlF'
+#alias ls='lsd'
+#alias l.='lsd -dF .*'
+#alias ll='lsd -AhlF'
+#alias la='lsd -AF'
+#alias li='lsd -dlF'
 
 # Go to Windows User Home Directory (WSL specific)
-# alias cdw='cd /mnt/c/Users/matia'
+#alias cdw='cd /mnt/c/Users/matia'
+#alias cdv='cd $VAULT_DIR'
 
-# Clear screen and history for privacy and security
+# Clear screen and history
 alias hsc='history -c'
 alias clh='clear && history -c'
 alias cls='clear && ls'
@@ -28,6 +30,8 @@ alias du='du -h'
 
 # Network
 alias wget='wget --show-progress'
+alias scurl='curl --tlsv1.3 --proto "=https"'
+alias scurl-dl='curl --tlsv1.3 --proto "=https" --location --remote-name'
 
 # Programs
 alias vim='vim.nox'
