@@ -182,5 +182,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Templates
-au BufNewFile *.py 0r ~/.vim/skel/skel.py
-au BufNewFile *.html 0r ~/.vim/skel/skel.html
+" au BufNewFile *.c 0r ~/.vim/skel/skel.c
+" au BufNewFile *.py 0r ~/.vim/skel/skel.py
+" au BufNewFile *.html 0r ~/.vim/skel/skel.html
