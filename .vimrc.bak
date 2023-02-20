@@ -4,6 +4,13 @@ set encoding=utf-8
 set nocompatible
 set mouse=a
 
+" Automatic vim-plug installation for new systems
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
+
 " vim-plug setup
 call plug#begin('~/.vim/plugged')
 
@@ -43,6 +50,7 @@ endif
 
 " Colorscheme configs
 let g:gruvbox_material_background='hard'
+" let g:gruvbox_material_transparent_background=1
 let g:gruvbox_material_enable_bold=1
 let g:gruvbox_material_enable_italic=1
 let g:sonokai_style='andromeda'
@@ -54,10 +62,11 @@ colorscheme gruvbox-material
 let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
-let g:airline#extensions#tabline#left_sep=' '
-let g:airline#extensions#tabline#left_alt_sep=' '
-let g:airline#extensions#tabline#right_sep=' '
-let g:airline#extensions#tabline#right_alt_sep=' '
+" To be used with MesloLGS NF Fonts
+" let g:airline#extensions#tabline#left_sep=' '
+" let g:airline#extensions#tabline#left_alt_sep=' '
+" let g:airline#extensions#tabline#right_sep=' '
+" let g:airline#extensions#tabline#right_alt_sep=' '
 
 " Tmuxline configs
 let g:tmuxline_preset='full'
@@ -76,7 +85,7 @@ let python_highlight_all=1
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_enable_semantic_highlighting=1
-let g:rustfmt_autosave=1
+" let g:rustfmt_autosave=1
 
 " Mute bell (WSL specific) and show errors graphically
 set visualbell

@@ -9,7 +9,7 @@ fi
 # Antigen Start
 source /usr/share/zsh/share/antigen.zsh
 
-#Antigen Theme
+# Antigen Theme
 antigen theme romkatv/powerlevel10k
 
 # Antigen Bundles
@@ -29,3 +29,9 @@ antigen apply
 # Add user bin folders to PATH
 [[ -d "$HOME/bin/" ]] && PATH="$HOME/bin/:$PATH"
 [[ -d "$HOME/.local/bin/" ]] && PATH="$HOME/.local/bin/:$PATH"
+
+# History options
+export HISTSIZE=1000
+export SAVEHIST=1000
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE

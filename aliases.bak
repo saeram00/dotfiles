@@ -8,25 +8,29 @@ alias sln='ln -siv'
 # File listing (with lsd)
 #alias ls='lsd'
 #alias l.='lsd -dF .*'
-#alias ll='lsd -AhlF'
+#alias ll='lsd -AhlFL'
 #alias la='lsd -AF'
 #alias li='lsd -dlF'
 
-# Go to Windows User Home Directory (WSL specific)
+# cd aliases
 #alias cdw='cd /mnt/c/Users/matia'
 #alias cdv='cd $VAULT_DIR'
 
 # Clear screen and history
-alias hsc='history -c'
-alias clh='clear && history -c'
+# alias clh='clear && history -c'
+# alias hsc='history -c'
 alias cls='clear && ls'
 alias cll='clear && ls -AhlF'
 alias cla='clear && ls -AF'
+# Same but with tree
+# alias cl3='clear && tree'
+# alias cl3d='clear && tree --dirsfirst'
+# alias cl3f='clear && tree --filesfirst'
 
 # Resource management
 alias df='df -h'
 alias free='free -h'
-alias du='du -h'
+# alias du='du -h'
 
 # Network
 alias wget='wget --show-progress'
