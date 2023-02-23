@@ -1,24 +1,41 @@
-# File manipulation
+# File listing (with lsd)
+# alias ls='lsd'
+# alias l.='lsd -dF .*'
+# alias ll='lsd -AlFL'
+# alias la='lsd -AF'
+# alias li='lsd -dlF'
+
+# grep aliases
+alias grep='grep --color=auto'
+alias zgrep='zgrep --color=auto'
+alias zegrep='zegrep --color=auto'
+alias zfgrep='zfgrep --color=auto'
+alias zipgrep='zipgrep --color=auto'
+alias bzgrep='bzgrep --color=auto'
+alias xzgrep='xzgrep --color=auto'
+alias pcregrep='pcregrep --color=auto'
+alias pcre2grep='pcre2grep --color=auto'
+alias zstdgrep='zstdgrep --color=auto'
+
+# File management
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -Iv'
 alias chmod='chmod -c'
 alias sln='ln -siv'
 
-# File listing (with lsd)
-#alias ls='lsd'
-#alias l.='lsd -dF .*'
-#alias ll='lsd -AhlFL'
-#alias la='lsd -AF'
-#alias li='lsd -dlF'
-
 # cd aliases
-#alias cdw='cd /mnt/c/Users/matia'
-#alias cdv='cd $VAULT_DIR'
+# alias cdv='cd $VAULT_DIR'
+# alias cdw='cd /mnt/c/Users/$WIN_USER'
+
+# Resource management
+alias df='df -h'
+alias free='free -h'
+# alias du='du -h'
 
 # Clear screen and history
-# alias clh='clear && history -c'
 # alias hsc='history -c'
+# alias clh='clear && history -c'
 alias cls='clear && ls'
 alias cll='clear && ls -AhlF'
 alias cla='clear && ls -AF'
@@ -27,20 +44,16 @@ alias cla='clear && ls -AF'
 # alias cl3d='clear && tree --dirsfirst'
 # alias cl3f='clear && tree --filesfirst'
 
-# Resource management
-alias df='df -h'
-alias free='free -h'
-# alias du='du -h'
-
 # Network
 alias wget='wget --show-progress'
+alias swget='wget --show-progress --https-only --secure-protocol=TLSv1_3'
 alias scurl='curl --tlsv1.3 --proto "=https"'
 alias scurl-dl='curl --tlsv1.3 --proto "=https" --location --remote-name'
 
 # Programs
-alias vim='vim.nox'
-alias nv='nvim'
-alias nvdiff='nvim -d'
+# alias vim='vim.nox'
+# alias nv='nvim'
+# alias nvdiff='nvim -d'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
