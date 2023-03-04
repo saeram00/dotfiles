@@ -56,7 +56,7 @@ let g:gruvbox_material_enable_italic=1
 let g:sonokai_style='andromeda'
 let g:sonokai_enable_bold=1
 let g:sonokai_enable_italic=1
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
 
 " Airline configs
 let g:airline_theme='base16_gruvbox_dark_hard'
