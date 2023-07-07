@@ -12,6 +12,8 @@
 # alias li='lsd -dlF'
 
 # grep aliases
+alias egrep='grep -E --color=auto'
+alias fgrep='grep -F --color=auto'
 alias grep='grep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias zegrep='zegrep --color=auto'
