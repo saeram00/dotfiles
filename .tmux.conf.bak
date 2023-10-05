@@ -27,3 +27,22 @@ set -g base-index 1
 # Switch windows with arrow keys
 bind -n S-Left previous-window
 bind -n S-Right next-window
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+# tmux-resurrect -> restore vim-sessions
+set -g @resurrect-strategy-vim 'session'
+# tmux-resurrect -> restore pane contents
+set -g @resurrect-capture-pane-contents 'on'
+
+# Automatically install tpm on new machines
+if "test ! -d ~/.config/tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm && ~/.config/tmux/plugins/tpm/bin/install_plugins'"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.config/tmux/plugins/tpm/tpm'
