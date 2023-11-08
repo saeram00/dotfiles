@@ -46,6 +46,8 @@ call plug#end()
 " Display options
 set background=dark
 if has('+termguicolors')
+  set t_8f=\[[38;2;%lu;%lu;%lum
+  set t_8b=\[[48;2;%lu;%lu;%lum
   set termguicolors " 24-bit terminal
 endif
 
@@ -140,8 +142,8 @@ map <leader>py :!python3<CR>
 " Run current buffer as a Python script
 map <leader>pp :!python3 %<CR>
 " Same thing for Neovim
-map <leader>npy :terminal python3<CR>i
-map <leader>npp :terminal python3 %<CR>i
+" map <leader>npy :terminal python3<CR>i
+" map <leader>npp :terminal python3 %<CR>i
 
 " Fold control
 nnoremap H za
@@ -176,6 +178,12 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+" Moving between open buffers
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>h :bp<CR>
+" Close current buffer
+nnoremap <leader>bd :bd<CR>
+
 " Moving between split-window buffers
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -185,4 +193,5 @@ nnoremap <C-l> <C-w>l
 " Templates
 " au BufNewFile *.c 0r ~/.vim/skel/skel.c
 " au BufNewFile *.py 0r ~/.vim/skel/skel.py
+" au BufNewFile *.sh 0r ~/.vim/skel/skel.sh
 " au BufNewFile *.html 0r ~/.vim/skel/skel.html

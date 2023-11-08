@@ -1,5 +1,5 @@
 # File listing (no lsd)
-# alias l.='ls -dF .*'
+# alias l.='ls -dF .[!.]*'
 # alias ll='ls -AhlFH'
 # alias la='ls -AF'
 # alias li='ls -hdlF'

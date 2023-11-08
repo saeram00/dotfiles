@@ -1,4 +1,8 @@
-; [init]
+[user]
+	name = saeram00
+	email = saeram00.nova@gmail.com
+[init]
+	defaultBranch = main
 ; 	templateDir = /home/amat/.git-template
 [alias]
 	ll = log --all --stat --graph --decorate
