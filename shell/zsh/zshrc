@@ -24,14 +24,19 @@ antigen apply
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Source aliases file
-[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 
 # Add user bin folders to PATH
-[[ -d "$HOME/bin/" ]] && PATH="$HOME/bin/:$PATH"
-[[ -d "$HOME/.local/bin/" ]] && PATH="$HOME/.local/bin/:$PATH"
+[[ -d "${HOME}/bin/" ]] && PATH="${HOME}/bin/:${PATH}"
+[[ -d "${HOME}/.local/bin/" ]] && PATH="${HOME}/.local/bin/:${PATH}"
 
 # History options
 export HISTSIZE=1000
 export SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+
+# pipx completion
+# autoload -U bashcompinit
+# bashcompinit
+# eval "$(register-python-argcomplete pipx)"

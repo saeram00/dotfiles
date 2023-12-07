@@ -6,3 +6,7 @@
 ; 	templateDir = /home/amat/.git-template
 [alias]
 	ll = log --all --stat --graph --decorate
+[gpg]
+	format = openpgp
+[committer]
+	email = saeram00.nova@gmail.com

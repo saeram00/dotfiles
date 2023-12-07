@@ -1,0 +1,5 @@
+# Source profile
+[[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
+
+# Source ~/.zshrc
+[[ -f "${HOME}/.zshrc" ]] && source "${HOME}/.zshrc"
