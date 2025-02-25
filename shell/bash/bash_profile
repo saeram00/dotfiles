@@ -1,8 +1,5 @@
 #
 # ~/.bash_profile
 #
-# Source profile
-[[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
-
 # Source .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc

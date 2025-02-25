@@ -8,12 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# set PATH so it includes user's bin directory if it exists
-[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin/:${PATH}"
-
-# set PATH so it includes user's private bin directory if it exists
-[[ -d "${HOME}/.local/bin" ]] && PATH="${HOME}/.local/bin/:${PATH}"
-
 # For gpg-agent and signing git commits
 GPG_TTY="$(tty)"
 export GPG_TTY
@@ -24,13 +18,6 @@ export GPG_TTY
 # Rust packaging system
 # . "$HOME/.cargo/env"
 
-# pip bash completion start
-_pip_completion()
-{
-    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-                   PIP_AUTO_COMPLETE=1 $1 2>/dev/null ) )
-}
-complete -o default -F _pip_completion /home/amat/.local/bin/python -m pip
-# pip bash completion end
-
+# Adding GOBIN to PATH for Go development
+# GOBIN="$(go env GOBIN)"
+# [ -d "${GOBIN}" ] && PATH="${PATH}:${GOBIN}" && unset -v GOBIN

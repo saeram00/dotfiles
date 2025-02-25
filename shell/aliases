@@ -1,15 +1,36 @@
-# File listing (no lsd)
-# alias l.='ls -dF .[!.]*'
-# alias ll='ls -AhlFH'
-# alias la='ls -AF'
-# alias li='ls -hdlF'
-
-# File listing (with lsd)
-# alias ls='lsd'
-# alias l.='lsd -dF .*'
-# alias ll='lsd -AlFL'
-# alias la='lsd -AF'
-# alias li='lsd -dlF'
+# File listing options
+if [[ -x "/usr/bin/lsd" ]]; then
+    # File listing (with lsd)
+    alias ls='lsd'
+    alias l.='lsd -dF .*'
+    alias ll='lsd -AlFL'
+    alias la='lsd -AF'
+    alias li='lsd -dlF'
+    alias cls='clear && lsd'
+    alias cl.='clear && lsd -dF .*'
+    alias cll='clear && lsd -AlF'
+    alias cla='clear && lsd -AF'
+    # List directories with tree
+    alias lt='lsd --tree'
+    alias cl3='clear && lsd --tree'
+    alias cl3d='clear && lsd --tree --group-directories-first'
+    alias cl3f='clear && lsd --tree --group-dirs=last'
+elif [[ -x "/usr/bin/tree" ]]; then
+    alias lt='tree'
+    alias cl3='clear && tree'
+    alias cl3d='clear && tree --dirsfirst'
+    alias cl3f='clear && tree --filesfirst'
+else
+    # File listing (no lsd)
+    alias l.='ls -dF .*'
+    alias ll='ls -AhlFH'
+    alias la='ls -AF'
+    alias li='ls -hdlF'
+    alias cls='clear && ls'
+    alias cl.='clear && ls -dF .*'
+    alias cll='clear && ls -AhlFH'
+    alias cla='clear && ls -AF'
+fi
 
 # grep aliases
 alias egrep='grep -E --color=auto'
@@ -33,7 +54,7 @@ alias chmod='chmod -c'
 alias sln='ln -siv'
 
 # cd aliases
-# alias cdv='cd $VAULT_DIR'
+[[ -v VAULT_DIR ]] && alias cdv='cd $VAULT_DIR'
 # alias cdw='cd /mnt/c/Users/$WIN_USER'
 
 # Resource management
@@ -42,15 +63,10 @@ alias free='free -h'
 # alias du='du -h'
 
 # Clear screen and history
-# alias hsc='history -c'
-# alias clh='clear && history -c'
-alias cls='clear && ls'
-alias cll='clear && ls -AhlF'
-alias cla='clear && ls -AF'
-# Same but with tree
-# alias cl3='clear && tree'
-# alias cl3d='clear && tree --dirsfirst'
-# alias cl3f='clear && tree --filesfirst'
+if [[ "${0}" == *bash ]]; then
+    alias hsc='history -c'
+    alias clh='clear && history -c'
+fi
 
 # Network
 alias wget='wget --show-progress'
@@ -61,8 +77,12 @@ alias scurl-dl='curl --tlsv1.3 --proto "=https" --location --remote-name'
 # Programs
 # alias vim='vim.nox'
 # alias nv='nvim'
-# alias nvdiff='nvim -d'
+# alias nvdiff='nvim -dO'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
 alias ssh-start-agent='eval $(ssh-agent -s)'
+
+# Apps
+# alias svirsh='virsh -c qemu:///system'
+# alias fdbg='$HOME/.local/bin/fdbg'

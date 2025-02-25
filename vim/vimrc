@@ -25,6 +25,7 @@ Plug 'doums/darcula'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
@@ -36,6 +37,9 @@ Plug 'tpope/vim-obsession'
 " (Python)
 Plug 'vim-scripts/indentpython.vim', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
+
+" (Go)
+"Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries'}
 
 " (Rust)
 "Plug 'rust-lang/rust.vim', {'for': 'rust'}
@@ -88,6 +92,13 @@ let python_highlight_all=1
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_enable_semantic_highlighting=1
+
+" For Go
+" gopls
+" let g:go_def_mode='gopls'
+" let g:go_info_mode='gopls'
+
+" For Rust
 " let g:rustfmt_autosave=1
 
 " Mute bell (WSL specific) and show errors graphically

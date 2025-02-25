@@ -1,5 +1,2 @@
-# Source profile
-[[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
-
 # Source ~/.zshrc
 exec zsh

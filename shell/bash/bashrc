@@ -6,10 +6,16 @@
 set -o vi
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ $- != *i* ]] && return
+
+# Source profile
+[[ -r "$HOME/.profile" ]] && . "$HOME/.profile"
+
+# set PATH so it includes user's bin directory if it exists
+[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin/:${PATH}"
+
+# set PATH so it includes user's private bin directory if it exists
+[[ -d "${HOME}/.local/bin" ]] && PATH="${HOME}/.local/bin/:${PATH}"
 
 # Don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -57,13 +63,36 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+# if ! shopt -oq posix; then
+#   if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+#   elif [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+#   fi
+# fi
+
+# tmux completions
+if [[ -d "/usr/share/bash-completion" ]]; then
+    dir="${BASH_COMPLETION_DIR:-"${XDG_DATA_HOME:-"$HOME/.local/share"}/bash-completion"}/completions"
+    if [[ ! -r "${dir}/tmux" ]]; then
+        mkdir -p "${dir}"
+        curl -fSsL "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux" > "${dir?error: dir not set: you must run the previous commands first}/tmux"
+    fi
+    unset -v dir
 fi
+
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 2>/dev/null ) )
+}
+complete -o default -F _pip_completion /home/amat/.local/bin/python -m pip
+# pip bash completion end
+
+# pipx completion
+# eval "$(register-python-argcomplete pipx)"
 
 # Rust packaging system
 # . "$HOME/.cargo/env"

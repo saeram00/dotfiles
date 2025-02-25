@@ -5,30 +5,42 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Created by newuser for 5.9
-# Antigen Start
-source /usr/share/zsh/share/antigen.zsh
+# Start antigen
+source "${XDG_CONFIG_HOME}/antigen/antigen.zsh"
 
-# Antigen Theme
-antigen theme romkatv/powerlevel10k
+# Use oh-my-zsh libraries
+antigen use oh-my-zsh
 
 # Antigen Bundles
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle "zsh-users/zsh-syntax-highlighting"
+antigen bundle "zsh-users/zsh-completions"
+antigen bundle "zsh-users/zsh-autosuggestions"
+
+# Antigen Theme
+antigen theme "romkatv/powerlevel10k"
 
 # Apply plugins
 antigen apply
+# End of antigen setup
+
+# Lines configured by zsh-newuser-install
+setopt extendedglob notify
+unsetopt autocd beep nomatch
+bindkey -v
+# End of lines configured by zsh-newuser-install
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f "${HOME}/.p10k.zsh" ]] || source "${HOME}/.p10k.zsh"
 
-# Source aliases file
-[[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
+# Source profile
+[[ -r "${HOME}/.profile" ]] && source "${HOME}/.profile"
 
 # Add user bin folders to PATH
 [[ -d "${HOME}/bin/" ]] && PATH="${HOME}/bin/:${PATH}"
 [[ -d "${HOME}/.local/bin/" ]] && PATH="${HOME}/.local/bin/:${PATH}"
+
+# Source aliases file
+[[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 
 # History options
 export HISTSIZE=1000
@@ -36,7 +48,13 @@ export SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
+# Completions settings
+autoload -Uz bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
+# pip completion
+# eval "$(pip completion --zsh)"
+# compctl -K _pip_completion pip
+
 # pipx completion
-# autoload -U bashcompinit
-# bashcompinit
 # eval "$(register-python-argcomplete pipx)"
