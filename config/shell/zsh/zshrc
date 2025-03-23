@@ -36,8 +36,8 @@ bindkey -v
 [[ -r "${HOME}/.profile" ]] && source "${HOME}/.profile"
 
 # Add user bin folders to PATH
-[[ -d "${HOME}/bin/" ]] && PATH="${HOME}/bin/:${PATH}"
-[[ -d "${HOME}/.local/bin/" ]] && PATH="${HOME}/.local/bin/:${PATH}"
+[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin:${PATH}"
+[[ -d "${HOME}/.local/bin" ]] && PATH="${HOME}/.local/bin:${PATH}"
 
 # Source aliases file
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
