@@ -76,13 +76,15 @@ alias scurl-dl='curl --tlsv1.3 --proto "=https" --location --remote-name'
 
 # Programs
 # alias vim='vim.nox'
-# alias nv='nvim'
-# alias nvdiff='nvim -dO'
+alias nv='nvim'
+alias nvdiff='nvim -dO'
+alias nvk='NVIM_APPNAME=nvim-kickstart nvim'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
 alias ssh-start-agent='eval $(ssh-agent -s)'
 
 # Apps
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # alias svirsh='virsh -c qemu:///system'
 # alias fdbg='$HOME/.local/bin/fdbg'

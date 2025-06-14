@@ -29,6 +29,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'fladson/vim-kitty'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -57,13 +58,13 @@ endif
 
 " Colorscheme configs
 let g:gruvbox_material_background='hard'
-" let g:gruvbox_material_transparent_background=1
+let g:gruvbox_material_transparent_background=1
 let g:gruvbox_material_enable_bold=1
 let g:gruvbox_material_enable_italic=1
 let g:sonokai_style='andromeda'
 let g:sonokai_enable_bold=1
 let g:sonokai_enable_italic=1
-" colorscheme gruvbox-material
+colorscheme gruvbox-material
 
 " Airline configs
 let g:airline_theme='base16_gruvbox_dark_hard'
@@ -202,7 +203,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Templates
-" au BufNewFile *.c 0r ~/.vim/skel/skel.c
-" au BufNewFile *.py 0r ~/.vim/skel/skel.py
-" au BufNewFile *.sh 0r ~/.vim/skel/skel.sh
+au BufNewFile *.c 0r ~/.vim/skel/skel.c
+au BufNewFile *.py 0r ~/.vim/skel/skel.py
+au BufNewFile *.sh 0r ~/.vim/skel/skel.sh
 " au BufNewFile *.html 0r ~/.vim/skel/skel.html
