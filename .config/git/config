@@ -1,6 +1,7 @@
 [user]
-	name = saeram00
+	name = Matías Olivares Duarte
 	email = saeram00.nova@gmail.com
+	signingKey = 60CB75160028807C!
 [init]
 	defaultBranch = main
 ; 	templateDir = /home/amat/.git-template
@@ -10,3 +11,7 @@
 	format = openpgp
 [committer]
 	email = saeram00.nova@gmail.com
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true

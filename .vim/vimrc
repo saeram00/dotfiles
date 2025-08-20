@@ -63,7 +63,7 @@ let g:gruvbox_material_enable_italic=1
 let g:sonokai_style='andromeda'
 let g:sonokai_enable_bold=1
 let g:sonokai_enable_italic=1
-" colorscheme gruvbox-material
+colorscheme gruvbox-material
 
 " Airline configs
 let g:airline_theme='base16_gruvbox_dark_hard'
@@ -202,7 +202,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Templates
-" au BufNewFile *.c 0r ~/.vim/skel/skel.c
-" au BufNewFile *.py 0r ~/.vim/skel/skel.py
-" au BufNewFile *.sh 0r ~/.vim/skel/skel.sh
+au BufNewFile *.c 0r ~/.vim/skel/skel.c
+au BufNewFile *.py 0r ~/.vim/skel/skel.py
+au BufNewFile *.sh 0r ~/.vim/skel/skel.sh
 " au BufNewFile *.html 0r ~/.vim/skel/skel.html

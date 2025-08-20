@@ -55,7 +55,7 @@ alias sln='ln -siv'
 
 # cd aliases
 [[ -v VAULT_DIR ]] && alias cdv='cd $VAULT_DIR'
-# alias cdw='cd /mnt/c/Users/$WIN_USER'
+alias cdw='cd /mnt/c/Users/$WIN_USER'
 
 # Resource management
 alias df='df -h'
@@ -76,8 +76,10 @@ alias scurl-dl='curl --tlsv1.3 --proto "=https" --location --remote-name'
 
 # Programs
 # alias vim='vim.nox'
-# alias nv='nvim'
+alias nv='nvim'
+alias nvk='NVIM_APPNAME="nvim-kickstart" nvim'
 # alias nvdiff='nvim -dO'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Authentication
 alias git-ssh='ssh -T saeram-github'
