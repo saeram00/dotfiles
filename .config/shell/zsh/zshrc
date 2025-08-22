@@ -6,7 +6,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Start antigen
-source "${XDG_CONFIG_HOME}/antigen/antigen.zsh"
+if [[ -h "${XDG_CONFIG_HOME:-${HOME:-~}/.config}/antigen/antigen.zsh" ]]; then
+  source "${XDG_CONFIG_HOME:-${HOME:-~}/.config}/antigen/antigen.zsh"
+else
+  if [[ -r /usr/share/zsh/share/antigen.zsh ]]; then
+    # antigen.zsh is not linked. Setting up a symlink.
+    ln -s /usr/share/zsh/share/antigen.zsh "${XDG_CONFIG_HOME:-${HOME:-~}/.config}/antigen/antigen.zsh"
+  else
+    echo 'antigen is not installed on this system.'
+  fi
+fi
 
 # Use oh-my-zsh libraries
 antigen use oh-my-zsh

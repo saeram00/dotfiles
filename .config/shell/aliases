@@ -15,11 +15,6 @@ if [[ -x "/usr/bin/lsd" ]]; then
     alias cl3='clear && lsd --tree'
     alias cl3d='clear && lsd --tree --group-directories-first'
     alias cl3f='clear && lsd --tree --group-dirs=last'
-elif [[ -x "/usr/bin/tree" ]]; then
-    alias lt='tree'
-    alias cl3='clear && tree'
-    alias cl3d='clear && tree --dirsfirst'
-    alias cl3f='clear && tree --filesfirst'
 else
     # File listing (no lsd)
     alias l.='ls -dF .*'
@@ -30,6 +25,12 @@ else
     alias cl.='clear && ls -dF .*'
     alias cll='clear && ls -AhlFH'
     alias cla='clear && ls -AF'
+    if [[ -x "/usr/bin/tree" ]]; then
+        alias lt='tree'
+        alias cl3='clear && tree'
+        alias cl3d='clear && tree --dirsfirst'
+        alias cl3f='clear && tree --filesfirst'
+    fi
 fi
 
 # grep aliases
